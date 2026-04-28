@@ -1,0 +1,75 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.parent{
+    height: 100vh;
+    width: 100vw;
+    background-color: rgb(165, 164, 164);
+    display: flex;
+    justify-content: center;
+    align-items: start;
+}
+
+.parent nav{
+    width: 100%;
+    position: relative;
+}
+
+/* Hide checkbox */
+#menu-toggle{
+    display: none;
+}
+
+/* Navbar Menu */
+.parent nav ul{
+    display: flex;
+    justify-content: center;
+}
+
+.parent nav ul li{
+    padding: 10px 25px;
+    list-style: none;
+    cursor: pointer;
+    background-color: rgb(134, 132, 132);
+}
+
+.parent nav ul li:hover{
+    background-color: rgb(109, 109, 109);
+}
+
+/* Hamburger Button */
+.menu-btn{
+    display: none;
+    font-size: 28px;
+    cursor: pointer;
+    padding: 10px;
+    margin-left: auto;
+    width: fit-content;
+}
+
+/* Mobile View */
+@media screen and (max-width:800px){
+
+    .menu-btn{
+        display: block;
+    }
+
+    .parent nav ul{
+        display: none;
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .parent nav ul li{
+        text-align: center;
+        width: 100%;
+    }
+
+    /* Show menu when clicked */
+    #menu-toggle:checked ~ ul{
+        display: flex;
+    }
+}
